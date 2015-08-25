@@ -43,7 +43,7 @@ public class QuestionB {
         // YOUR CODE
     }
 }
-```java
+```
 
 C++:
 
@@ -53,4 +53,4 @@ class QuestionA {
 		// YOUR CODE
 	}
 };
-```java
+```
