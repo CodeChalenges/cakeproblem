@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CakeProblemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-25T00:16:04" hostname="klein-ubuntu" time="0.002">
+<testsuite name="CakeProblemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-25T13:45:58" hostname="zenvia-klein" time="0.002">
   <properties/>
   <testcase name="testCake1" classname="CakeProblemTest" time="0.001"/>
   <testcase name="testCake2" classname="CakeProblemTest" time="0.0"/>

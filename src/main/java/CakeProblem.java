@@ -18,23 +18,23 @@ public class CakeProblem {
     public static Integer cake(final int[] input) {
         int maxSum = 0;
         int currentSum = 0;
-        int leftPos, rightPos;
+        int topLayer, bottomLayer;
 
-        leftPos = 0;
-        rightPos = input.length - 1;
+        topLayer = 0;
+        bottomLayer = input.length - 1;
 
-        while (leftPos < rightPos) {
-            currentSum += Math.max(input[leftPos], input[rightPos]);
+        while (topLayer < bottomLayer) {
+            currentSum += Math.max(input[topLayer], input[bottomLayer]);
 
             if (currentSum > maxSum) {
                 maxSum = currentSum;
             }
 
-            if (input[leftPos] > input[rightPos]) {
-                leftPos++;
+            if (input[topLayer] > input[bottomLayer]) {
+                topLayer++;
             }
             else {
-                rightPos--;
+                bottomLayer--;
             }
         }
 
