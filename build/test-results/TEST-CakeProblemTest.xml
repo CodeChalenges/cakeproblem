@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CakeProblemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-25T13:45:58" hostname="zenvia-klein" time="0.002">
+<testsuite name="CakeProblemTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2015-08-25T16:58:25" hostname="zenvia-klein" time="0.016">
   <properties/>
-  <testcase name="testCake1" classname="CakeProblemTest" time="0.001"/>
+  <testcase name="testCake1" classname="CakeProblemTest" time="0.014"/>
   <testcase name="testCake2" classname="CakeProblemTest" time="0.0"/>
   <testcase name="testCake3" classname="CakeProblemTest" time="0.0"/>
+  <testcase name="testCake4" classname="CakeProblemTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

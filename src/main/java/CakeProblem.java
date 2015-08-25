@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * CakeProblem class.
  *
@@ -16,28 +18,30 @@ public class CakeProblem {
      *  @return Integer the sum of best layer sequence
      * */
     public static Integer cake(final int[] input) {
-        int maxSum = 0;
-        int currentSum = 0;
-        int topLayer, bottomLayer;
+        return cake(0, input);
+    }
 
-        topLayer = 0;
-        bottomLayer = input.length - 1;
+    /**
+     * Recursive algorithm to calculate the best path to follow
+     * given a current state.
+     *
+     * Input:
+     *  @param acc the sum of layers already consumed
+     *  @param subsequence the remaining layers
+     *
+     * Output:
+     *  @return Integer the best local solution: left, right or none
+     * */
+    private static Integer cake(final int acc, final int[] subsequence) {
+        final int subsLength = subsequence.length;
 
-        while (topLayer < bottomLayer) {
-            currentSum += Math.max(input[topLayer], input[bottomLayer]);
-
-            if (currentSum > maxSum) {
-                maxSum = currentSum;
-            }
-
-            if (input[topLayer] > input[bottomLayer]) {
-                topLayer++;
-            }
-            else {
-                bottomLayer--;
-            }
+        if (subsLength == 1) {
+            return acc + subsequence[0];
         }
-
-        return maxSum;
+        else{
+            int accLeft  = cake(acc + subsequence[0], Arrays.copyOfRange(subsequence, 1, subsLength));
+            int accRight = cake(acc + subsequence[subsLength-1], Arrays.copyOfRange(subsequence, 0, subsLength-1));
+            return Math.max(acc, Math.max(accLeft, accRight));
+        }
     }
 }

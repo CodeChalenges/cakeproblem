@@ -29,4 +29,11 @@ public class CakeProblemTest {
         int output = CakeProblem.cake(layers);
         assertEquals(output, 0);
     }
+
+    @Test
+    public void testCake4() {
+        int[] layers = {-1, -1, -1, -1, -1, 5, -2};
+        int output = CakeProblem.cake(layers);
+        assertEquals(output, 3);
+    }
 }
