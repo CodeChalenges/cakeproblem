@@ -48,7 +48,7 @@ public class QuestionB {
 C++:
 
 ```c++
-class QuestionA {
+class QuestionB {
 	int cake (int input[]) {
 		// YOUR CODE
 	}
