@@ -37,7 +37,7 @@ public class CakeProblem {
                   upperLayerValue  = input[upperLayer],
                   bottomLayerValue = input[bottomLayer];
 
-        if (nlayers < 2) {
+        if (nlayers == 1) {
             return Math.max(acc + upperLayerValue, 0);
         }
         else {
