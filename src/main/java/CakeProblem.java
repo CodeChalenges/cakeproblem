@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * CakeProblem class.
  *
@@ -12,13 +10,13 @@ public class CakeProblem {
      * CAKE: method that calculate the sum of best layer sequence.
      *
      * Input:
-     *  @param input sequence of layers, from to to bottom
+     *  @param input sequence of layers, from top to bottom
      *
      * Output:
      *  @return Integer the sum of best layer sequence
      * */
     public static Integer cake(final int[] input) {
-        return cake(0, input);
+        return (input.length == 0) ? 0 : cake(input, 0, 0, input.length - 1);
     }
 
     /**
@@ -26,23 +24,25 @@ public class CakeProblem {
      * given a current state.
      *
      * Input:
-     *  @param acc the sum of layers already consumed
      *  @param input the remaining layers
+     *  @param acc the sum of layers already consumed
+     *  @param upperLayer upperLayer of input
+     *  @param bottomLayer bottomLayer of input
      *
      * Output:
      *  @return Integer the best local solution: left, right or none
      * */
-    private static Integer cake(final int acc, final int[] input) {
+    private static Integer cake(final int[] input, final int acc, final int upperLayer, final int bottomLayer) {
         final int nlayers          = input.length,
-                  topLayerValue    = input[0],
-                  bottomLayerValue = input[nlayers-1];
+                  upperLayerValue  = input[upperLayer],
+                  bottomLayerValue = input[bottomLayer];
 
-        if (nlayers == 1) {
-            return acc + topLayerValue;
+        if ((bottomLayer - upperLayer) < 2) {
+            return Math.max(acc + upperLayerValue, 0);
         }
-        else{
-            int accLeft  = cake(acc + topLayerValue   , Arrays.copyOfRange(input, 1, nlayers  ));
-            int accRight = cake(acc + bottomLayerValue, Arrays.copyOfRange(input, 0, nlayers-1));
+        else {
+            int accLeft  = cake(input, acc + upperLayerValue , upperLayer + 1, bottomLayer    );
+            int accRight = cake(input, acc + bottomLayerValue, upperLayer    , bottomLayer - 1);
             return max(acc, accLeft, accRight);
         }
     }

@@ -36,4 +36,32 @@ public class CakeProblemTest {
         int output = CakeProblem.cake(layers);
         assertEquals(output, 3);
     }
+
+    @Test
+    public void testCake5() {
+        int[] layers = {-1, -2, -3, -4, -5};
+        int output = CakeProblem.cake(layers);
+        assertEquals(output, 0);
+    }
+
+    @Test
+    public void testCake6() {
+        int[] layers = {10};
+        int output = CakeProblem.cake(layers);
+        assertEquals(output, 10);
+    }
+
+    @Test
+    public void testCake7() {
+        int[] layers = {-5};
+        int output = CakeProblem.cake(layers);
+        assertEquals(output, 0);
+    }
+
+    @Test
+    public void testCake8() {
+        int[] layers = {};
+        int output = CakeProblem.cake(layers);
+        assertEquals(output, 0);
+    }
 }
