@@ -24,20 +24,20 @@ public class CakeProblem {
      * given a current state.
      *
      * Input:
-     *  @param input the remaining layers
+     *  @param input sequence of layers, from top to bottom
      *  @param acc the sum of layers already consumed
-     *  @param upperLayer upperLayer of input
-     *  @param bottomLayer bottomLayer of input
+     *  @param upperLayer first layer of current division
+     *  @param bottomLayer last layer of current division
      *
      * Output:
-     *  @return Integer the best local solution: left, right or none
+     *  @return Integer the best local solution
      * */
     private static Integer cake(final int[] input, final int acc, final int upperLayer, final int bottomLayer) {
-        final int nlayers          = input.length,
+        final int nlayers          = bottomLayer - upperLayer + 1,
                   upperLayerValue  = input[upperLayer],
                   bottomLayerValue = input[bottomLayer];
 
-        if ((bottomLayer - upperLayer) < 2) {
+        if (nlayers < 2) {
             return Math.max(acc + upperLayerValue, 0);
         }
         else {
@@ -47,6 +47,17 @@ public class CakeProblem {
         }
     }
 
+    /**
+     * A convenient method to find the biggest of three variables.
+     *
+     * Input:
+     *  @param x the first value
+     *  @param y the second value
+     *  @param z the third value
+     *
+     * Output:
+     *  @return Integer the biggest of [x, y, z]
+     * */
     private static Integer max(int x, int y, int z){
         return Math.max(x, Math.max(y, z));
     }
