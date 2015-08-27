@@ -67,6 +67,13 @@ public class CakeProblemTest {
 
     @Test
     public void testCake9() {
+        int[] layers = {0};
+        int output = CakeProblem.cake(layers);
+        assertEquals(0, output);
+    }
+
+    @Test
+    public void testCake10() {
         int[] layers = {};
         int output = CakeProblem.cake(layers);
         assertEquals(0, output);
