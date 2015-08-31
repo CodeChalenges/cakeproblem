@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mauricioklein/cakeproblem.svg?branch=master)](https://travis-ci.org/mauricioklein/cakeproblem)
+
 # Cake Problem
 
 Problem proposed by Amazon recruting team to the software engineer role.
